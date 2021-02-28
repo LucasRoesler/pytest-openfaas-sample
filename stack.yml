@@ -1,0 +1,15 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+
+configuration:
+  templates:
+    - name: python3-flask
+      source: https://github.com/openfaas/python-flask-template
+
+functions:
+  calc:
+    lang: python3-flask
+    handler: ./calc
+    image:  ghcr.io/${OWNER:-lucasroesler}/calc:${TAG:-latest}
