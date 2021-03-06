@@ -1,0 +1,5 @@
+pytest
+black
+pylint
+tox
+flake8
